@@ -92,9 +92,11 @@ npx playwright test
 ![Report of E2E Tests](https://github.com/user-attachments/assets/09ae4952-12aa-4189-80d3-4579fc428c05)
 
 The Manual Test cases PDF can be found in Berkshire Investment - **Berkshire_Investment_Test_Case.pdf**
+https://github.com/Mukhil-Padmanabhan/bh-investment-funnel/blob/main/Berkshire_Investment_Test_Case.pdf
 
 Lighthouse Report is as shown below:
 
+![Screenshot 2025-05-22 at 17 08 27](https://github.com/user-attachments/assets/d230f36b-13c3-4a0e-b266-b1653fe0f3e8)
 
 
 ---
