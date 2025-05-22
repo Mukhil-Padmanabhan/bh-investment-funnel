@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": ".", // Important: baseUrl is needed for paths to work as expected from root.
+    "paths": {
+      "@/*": ["src/*"], // General rule: @/anything maps to frontend/src/anything
+      "@/components/*": ["src/components/*"], // Specific: @/components/maps to frontend/src/components/
+      "@/lib/*": ["src/lib/*"] // Specific: @/lib/* maps to frontend/src/lib/
+      // Add other specific paths if they are outside src or need special mapping
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}

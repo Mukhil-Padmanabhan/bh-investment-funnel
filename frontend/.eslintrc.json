@@ -1,0 +1,12 @@
+{
+    // ... other ESLint config
+    "overrides": [
+      {
+        "files": ["jest.config.js"],
+        "rules": {
+          "@typescript-eslint/no-require-imports": "off",
+          "@typescript-eslint/no-var-requires": "off" // You might need this too for `require`
+        }
+      }
+    ]
+  }
