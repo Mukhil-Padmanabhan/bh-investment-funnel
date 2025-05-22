@@ -1,6 +1,8 @@
 #  Berkshire Investment Funnel
 
-A comprehensive full-stack platform designed for investment tracking and vetting, inspired by Berkshire-style decision-making processes. Users can explore, submit, and upvote investment opportunities, while administrators have the ability to accept or reject submissions. The platform includes sectoral insights, voting mechanisms, and robust admin controls, all powered by a FastAPI backend, Next.js frontend, and Docker containerization.
+Berkshire Investment Funnel is a full-stack platform designed to crowdsource and evaluate investment ideas just like how seasoned investors review opportunities before making high-conviction decisions.
+Users can browse, submit, and upvote investment ideas based on their potential, sector, and expected returns. Once submitted, ideas appear in a centralized dashboard for admins, who can review and either accept or reject them. If rejected, the admin can also add a reason and a lesson learned, which are shared publicly to help others understand the decision-making process.
+The platform promotes transparency, collaborative judgment, and structured thinking around investing whether you're an enthusiast, a startup scout, or just love analyzing bold ideas.
 
 ---
 
