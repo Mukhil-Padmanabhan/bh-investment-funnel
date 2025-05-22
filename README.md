@@ -61,8 +61,8 @@ docker-compose up --build
 ```
 
 Once the containers are up, the app should be seen as below:
-Frontend: http://localhost:3000  
-Backend: http://localhost:8000/docs
+- Frontend: http://localhost:3000  
+-  Backend: http://localhost:8000/docs
 
 
 ## Demo Admin 
@@ -73,7 +73,7 @@ password: Admin@123
 
 ---
 
-## 🧪 Testing
+## Testing
 
 
 # Frontend unit tests
@@ -90,6 +90,12 @@ npx playwright test
 ```
 
 ![Report of E2E Tests](https://github.com/user-attachments/assets/09ae4952-12aa-4189-80d3-4579fc428c05)
+
+The Manual Test cases PDF can be found in Berkshire Investment - **Berkshire_Investment_Test_Case.pdf**
+
+Lighthouse Report is as shown below:
+
+
 
 ---
 
