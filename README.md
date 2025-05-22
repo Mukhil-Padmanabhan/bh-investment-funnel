@@ -138,4 +138,4 @@ PRs and suggestions are welcome! Please open issues for bugs or features you'd l
 
 ## License
 
-MIT © 2025 [Your Name](https://github.com/your-username)
+MIT © 2025
