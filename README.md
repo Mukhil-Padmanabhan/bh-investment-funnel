@@ -106,16 +106,16 @@ npx playwright test
 ## TODO / Roadmap / Future Improvements
 
 
-[ ] Add more unit tests with coverage on frontend and backend.
-[ ] Export analytics (top ideas, registered users, etc.).
-[ ] Email confirmation for registration.
-[ ] CI/CD pipeline for build + deploy (GH Actions or Railway).
-[ ] In-app Real time notifications.
-[ ] Slack webhook for new submissions.
-[ ] Multi admin support with activity logs.
-[ ] 2FA for admin login.
-[ ] Login with Google for users.
-[ ] Feedback box for end users to explain their reasoning
+- [ ] Add more unit tests with coverage on frontend and backend.
+- [ ] Export analytics (top ideas, registered users, etc.).
+- [ ] Email confirmation for registration.
+- [ ] CI/CD pipeline for build + deploy (GH Actions or Railway).
+- [ ] In-app Real time notifications.
+- [ ] Slack webhook for new submissions.
+- [ ] Multi admin support with activity logs.
+- [ ] 2FA for admin login.
+- [ ] Login with Google for users.
+- [ ] Feedback box for end users to explain their reasoning
 
 ---
 
