@@ -41,6 +41,20 @@ The platform promotes transparency, collaborative judgment, and structured think
 git clone https://github.com/your-username/berkshire-investment-funnel.git
 cd berkshire-investment-funnel
 ```
+
+## Environment Variables
+
+### backend/.env.prod
+```
+DATABASE_URL=postgresql://berkshire_user:secretpass@berkshire-db:5432/berkshire
+REDIS_URL=redis://berkshire-redis:6379
+ENV=prod
+```
+### frontend/.env.local (optional if using Docker)
+```
+NEXT_PUBLIC_API_URL=http://localhost:8000
+```
+
 ## Start full stack
 ```
 docker-compose up --build
@@ -55,19 +69,6 @@ Backend: http://localhost:8000/docs
 ```
 email: admin@gmail.com
 password: Admin@123
-```
-
-## Environment Variables
-
-### backend/.env.prod
-```
-DATABASE_URL=postgresql://berkshire_user:secretpass@berkshire-db:5432/berkshire
-REDIS_URL=redis://berkshire-redis:6379
-ENV=prod
-```
-### frontend/.env.local (optional if using Docker)
-```
-NEXT_PUBLIC_API_URL=http://localhost:8000
 ```
 
 ---
