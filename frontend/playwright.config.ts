@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-  testDir: './e2e',    // <--- This is the correct folder!
+  testDir: './e2e',
   timeout: 30 * 1000,
   expect: { timeout: 5000 },
   fullyParallel: true,
@@ -12,7 +12,7 @@ export default defineConfig({
   use: {
     baseURL: 'http://localhost:3000',
     trace: 'on-first-retry',
-    headless: false,
+    headless: true,
     launchOptions: { slowMo: 50 },
   },
   projects: [
