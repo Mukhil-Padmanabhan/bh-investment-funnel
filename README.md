@@ -1,10 +1,10 @@
-# 🏛 Berkshire Investment Funnel
+#  Berkshire Investment Funnel
 
-A full-stack, LLM-powered investment tracking and vetting platform inspired by Berkshire-style decision making. Users can explore, submit, upvote, or reject investment opportunities, with sectoral insights, voting logic, and admin controls—all running on a FastAPI + Next.js + Docker stack.
+A comprehensive full-stack platform designed for investment tracking and vetting, inspired by Berkshire-style decision-making processes. Users can explore, submit, and upvote investment opportunities, while administrators have the ability to accept or reject submissions. The platform includes sectoral insights, voting mechanisms, and robust admin controls, all powered by a FastAPI backend, Next.js frontend, and Docker containerization.
 
 ---
 
-## ✨ Features
+##  Features
 
 - **Portfolio Dashboard** — Visual breakdown of holdings by sector, total value, and investment types.
 - **Opportunities Explorer** — View and upvote promising ideas with filters, modals, and dynamic voting state.
@@ -20,7 +20,7 @@ A full-stack, LLM-powered investment tracking and vetting platform inspired by B
 
 ---
 
-## 📦 Tech Stack
+## Tech Stack
 
 | Layer      | Tech                                                   |
 |------------|--------------------------------------------------------|
@@ -34,72 +34,90 @@ A full-stack, LLM-powered investment tracking and vetting platform inspired by B
 
 ---
 
-## 🚀 Local Development
-
-bash
-# Clone the repo
+## Clone the repo
+```
 git clone https://github.com/your-username/berkshire-investment-funnel.git
 cd berkshire-investment-funnel
-
-# Start full stack
+```
+## Start full stack
+```
 docker-compose up --build
+```
 
+Once the containers are up, the app should be seen as below:
 Frontend: http://localhost:3000  
 Backend: http://localhost:8000/docs
----
+
+
+## Demo Admin 
+```
+email: admin@gmail.com
+password: Admin@123
+```
 
 ## Environment Variables
 
 ### backend/.env.prod
+```
 DATABASE_URL=postgresql://berkshire_user:secretpass@berkshire-db:5432/berkshire
 REDIS_URL=redis://berkshire-redis:6379
 ENV=prod
-
+```
 ### frontend/.env.local (optional if using Docker)
+```
 NEXT_PUBLIC_API_URL=http://localhost:8000
-
+```
 
 ---
 
 ## 🧪 Testing
 
-bash
+
 # Frontend unit tests
+```
 cd frontend
 npm run test
+```
 
 ![Sample Coverage of some components](https://github.com/user-attachments/assets/99cef372-a992-480c-8ca5-ddfcbea72509)
 
 # E2E tests with Playwright
+```
 npx playwright test
+```
 
 ![Report of E2E Tests](https://github.com/user-attachments/assets/09ae4952-12aa-4189-80d3-4579fc428c05)
 
 ---
 
-## 🛡 Security Features
+## Security Features
 
-Rate limiting on sensitive endpoints
-Token expiration with secure password hashing (bcrypt)
-Upvote protection (no duplicate voting per user)
-Optional user registration required for vote interaction
-Auto-detection of login state (frontend state + token)
-Auto Summarizer of the idea on insert
-
----
-
-## 🔧 TODO / Roadmap / Future Improvements
-
-
-[ ] Add more unit tests with coverage on frontend and backend
-[ ] Export analytics (top ideas, registered users, etc.)
-[ ] Email confirmation for registration
-[ ] CI/CD pipeline for build + deploy (GH Actions or Railway)
-[ ] In-app Real time notifications
+- Rate limiting on sensitive endpoints
+- Token expiration with secure password hashing (bcrypt)
+- Upvote protection (no duplicate voting per user)
+- Optional user registration required for vote interaction
+- Auto-detection of login state (frontend state + token)
+- Auto Summarizer of the idea on insert
 
 ---
 
-## 📸 Demo
+## TODO / Roadmap / Future Improvements
+
+
+[ ] Add more unit tests with coverage on frontend and backend.
+[ ] Export analytics (top ideas, registered users, etc.).
+[ ] Email confirmation for registration.
+[ ] CI/CD pipeline for build + deploy (GH Actions or Railway).
+[ ] In-app Real time notifications.
+[ ] Slack webhook for new submissions.
+[ ] Multi admin support with activity logs.
+[ ] 2FA for admin login.
+[ ] Login with Google for users.
+[ ] Feedback box for end users to explain their reasoning
+
+---
+
+## Demo
 
 <img width="1289" alt="Screenshot 2025-05-21 at 17 36 06" src="https://github.com/user-attachments/assets/d14ef65a-de23-4ee3-9044-e279ec6967e5" />
 <img width="1232" alt="Screenshot 2025-05-21 at 17 35 49" src="https://github.com/user-attachments/assets/efd11a62-0fa4-48f6-99df-5d1efda6874f" />
@@ -112,12 +130,12 @@ Auto Summarizer of the idea on insert
 
 ---
 
-## 🤝 Contribution
+## Contribution
 
 PRs and suggestions are welcome! Please open issues for bugs or features you'd like to see.
 
 ---
 
-## 📝 License
+## License
 
 MIT © 2025 [Your Name](https://github.com/your-username)
