@@ -141,11 +141,97 @@ Lighthouse Report is as shown below:
 
 ---
 
-## Contribution
+## Review Questions
 
-PRs and suggestions are welcome! Please open issues for bugs or features you'd like to see.
+1. **Technical choices: What influenced your decision on the specific tools used?**
 
----
+Next.js 15 App Router allowed me to do file-based routing, server-side rendering and client-side interactivity which made it a great fit for a hybrid interactive/content driven platform. 
+
+Backend: [FastAPI] was the obvious choice for  it gives a fast, modern, Pythonic API (based on standard Python type hints) along built-in features like validations, caching and etc., out of the box so I could focus more on writing business logic. 
+
+Database: I went ahead with [PostgreSQL 15], because one word - Reliability. 
+
+Auth: JWT based auth with bcrypt password hashing and secure token storage in localStorage are implemented, so as not to over complicate and keep things simple yet secured.
+
+DevOps: Docker Compose helps to easily orchestrate services (Postgres, Redis, frontend, backend) locally and CI/CD.
+
+Caching & Rate Limiting: Redis + slowapi stopped the abuse and so sped up the frontend.
+
+2. **Feature prioritization: How did you come to the conviction a specific feature is valuable? What user persona did you hone in on and given what evidence?**
+
+THe MVP was focused around a crowdsourced investment review funnel for 2 key personas:
+
+- Casual Investors (guests or non-logged users):
+Can browse, upvote, and see sectoral trends without logging in.
+
+- Internal Investment Analysts/Admins:
+Workflow to accept, reject ideas with tagging and rationale, learnings.
+
+Features were prioritised according to:
+Frequency of use (i.e. view opportunities vs submit new).
+
+Risk mitigation first (auth + rate limiting), then analytics.
+
+User delight next (modals, dark mode, search filtering), and
+
+I wanted to answer questions, such as “What happens after rejection/approval? Where does an idea go?”
+The initial belief was further reinforced by thinking in startup mode - “What is the smallest feature set that allows both of them to interact with ideas?”
+
+
+3. **Feature functionality: What does the interactive feature do? How does it work? Was it built elegantly?**
+
+The interactive core is the upvote + review loop:
+
+- Users browse ideas, upvote if they like any and can submit their if they would like to.
+- Admin will see a separate /admin panel with tabs (Pending, Accepted, Rejected). 
+- Each submission is reviewable via a modal with full details. Admins can accept/reject with reason + lesson learned.
+
+The public users can see the Accepted Ideas in Opportunities and Rejected with rejection reasoning Ideas in Rejections.
+
+The logic is beautifully divided into:
+
+- Shared models with minimum duplication (OpportunityStatus)
+- Separate admin/public APIs for better access control
+
+Reusuable cards, conditional buttons, modals. A lot of the basic UI building blocks that we use are abstracted and can even be generated with libraries Pretty much all.
+
+
+4.**How did you deploy the page? What components and services did you use?**
+
+Locally, the entire project is containerized with Docker Compose:
+
+- Frontend: Next.js running on localhost:3000
+- Backend: FastAPI on localhost:8000
+- Redis: Used for caching
+- Postgres: Used as the primary datastore
+
+CI/CD is managed via GitHub Actions, which:
+- Runs tests on every push to main
+
+This setup is flexible enough to be deployed to Railway, Fly.io, or AWS ECS with minimal tweaks.
+
+5. **Challenges and Learnings: What were the top challenges faced, and what did you learn from them?**
+
+- One of the main challenges was orchestrating a clean, full-stack architecture that seamlessly connects user submissions, voting logic, and admin moderation—all while maintaining clear data flow and user access boundaries. Balancing interactivity with data integrity required careful API design and thoughtful frontend UX
+
+- Another key challenge was ensuring that the admin panel had the right level of control without compromising the public user experience. Structuring access control securely, handling JWT-based authentication across client and server, and syncing frontend state with backend validation taught me the importance of both user roles and fallback handling.
+
+- I also learned how vital it is to seed meaningful sample data early on—this makes testing logic and refining user flows much more effective.
+
+Overall, this project deepened my understanding of modular backend design, authentication, and frontend state management in a real-world scenario.
+
+
+6. **Improvement Propositions: Given more time, what improvements or additional features would you consider adding?**
+
+Given more time, there are several meaningful features and enhancements I’d love to add to improve the platform's security, usability, and long-term value:
+
+- Stronger test coverage
+- Adding email verification and Google login would make signup both more secure and more convenient.
+- Setting up a CI/CD pipeline (using GitHub Actions or Railway) would automate testing and deployment on every push.
+- Real-time notifications and Slack webhooks for new submissions would help admins and reviewers stay updated instantly.
+- Supporting multiple admins with activity logs would create transparency in who accepted or rejected what, and when.
+- Enabling two-factor authentication (2FA) for admins would significantly improve protection for sensitive decisions.
+- I’d add a feedback box for users to explain why they voted or submitted an idea, adding valuable context to each opportunity.
 
 ## License
 
