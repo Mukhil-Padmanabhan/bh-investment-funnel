@@ -3,7 +3,6 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"
 
 from app.db.session import engine, SessionLocal
 from app.models.opportunity import Opportunity
-from app.models.rejection import Rejection
 from app.models.opportunity_vote import OpportunityVote
 from app.models.portfolio import PortfolioItem
 from app.models.user import User
